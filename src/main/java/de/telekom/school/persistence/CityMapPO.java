@@ -2,40 +2,43 @@ package de.telekom.school.persistence;
 
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "citymap")
 public class CityMapPO extends AbstractPO implements Serializable{
 
+    @ManyToOne
+    @JoinColumn(name = "cityname")
     @Column(name = "firstcity")
-    private String firstCityName;
+    private CitiesPO firstCityName;
 
+    @ManyToOne
+    @JoinColumn(name = "cityname")
     @Column(name = "secondcity")
-    private String secondCityName;
+    private CitiesPO secondCityName;
 
     @Column(name = "distance")
-    private long distance;
+    private Long distance;
 
-    public String getFirstCityName() {
+    public CitiesPO getFirstCityName() {
         return this.firstCityName;
     }
-    public  void setFirstCityName(String name) {
+    public  void setFirstCityName(CitiesPO name) {
         this.firstCityName = name;
     }
 
-    public String getSecondCityName() {
+    public CitiesPO getSecondCityName() {
         return this.secondCityName;
     }
-    public  void setSecondCityName(String name) {
+    public  void setSecondCityName(CitiesPO name) {
         this.secondCityName = name;
     }
 
     public long getDistance() {
         return this.distance;
     }
-    public  void setDistance(long distance) {
+    public  void setDistance(Long distance) {
         this.distance = distance;
     }
 

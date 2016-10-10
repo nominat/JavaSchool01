@@ -3,5 +3,14 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <display-name>Trucks Project</display-name>
+  <servlet>
+    <servlet-name>AddCity</servlet-name>
+    <servlet-class>de.telekom.school.servlet.AddCity</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddCity</servlet-name>
+    <url-pattern>/html/AddCity</url-pattern>
+  </servlet-mapping>
 </web-app>
