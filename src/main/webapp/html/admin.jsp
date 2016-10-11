@@ -16,5 +16,14 @@
     <p><input type="text" name="cityName" value="" placeholder="city name"></p>
     <input type="submit"  value="Add City">
 </form>
+
+<form method="POST" action="AddDistance">
+    <p><input type="text" name="cityName1" value="" placeholder="city 1 name"></p>
+    <p><input type="text" name="cityName2" value="" placeholder="city 2 name"></p>
+    <p><input type="text" name="distance" value="" placeholder="Distance between cities"></p>
+    <input type="submit"  value="Add City Map">
+</form>
+
 </body>
 </html>
+

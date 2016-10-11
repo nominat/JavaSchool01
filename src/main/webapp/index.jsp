@@ -36,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Java school project</a>
         </div>
         <div class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" role="form">
@@ -56,8 +56,8 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Tickets main page</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" role="button" href="html/About.jsp">Learn more &raquo;</a></p>
+        <p>This is main page for admin, and here you can work with data configuration.</p>
+        <p><a class="btn btn-primary btn-lg" role="button" href="html/About.jsp">About page &raquo;</a></p>
     </div>
 </div>
 
@@ -66,25 +66,25 @@
     <div class="row">
         <div class="col-md-4">
             <h2>Admin page</h2>
-            <p> Here You can add new city. </p>
+            <p> Here You can add new city, distance between two cities </p>
             <p><a class="btn btn-default" role="button" href="html/admin.jsp">Admin page &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p>Empty </p>
+            <p><a class="btn btn-default" href="#" role="button">Temp empty button 1 &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p>Empty</p>
+            <p><a class="btn btn-default" href="#" role="button">Temp empty button 1 &raquo;</a></p>
         </div>
     </div>
 
     <hr>
 
     <footer>
-        <p>&copy; Company 2014</p>
+        <p>&copy; Ilya Nominat</p>
     </footer>
 </div> <!-- /container -->
 

@@ -8,8 +8,7 @@ import javax.persistence.*;
 @Table(name = "cities")
 public class CitiesPO extends AbstractPO implements Serializable {
 
-
-    @Column(name = "cityname", length = 50)
+    @Column(name = "cityName")
     private String cityName;
 
     public CitiesPO() {
