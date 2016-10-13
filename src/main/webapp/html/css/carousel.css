@@ -1,0 +1,15 @@
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    display: block;
+    max-width: 50%;
+    height: auto;
+    max-height: 200px;
+    width: auto;
+}
+img {
+    vertical-align: middle;
+    margin-left: 30%;
+}
+.item {
+    width: 460px;
+    height: 345px;
+}

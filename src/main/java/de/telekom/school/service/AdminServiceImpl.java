@@ -14,15 +14,25 @@ public class AdminServiceImpl implements AdminService {
 
     private CityDAO cityDAO = new CityDAO();
     private CityMapDAO cityMapDAO = new CityMapDAO();
+    private CitiesPO cityPO = new CitiesPO();
 
-    public void addCity(String cityName) {
-        CitiesPO city = new CitiesPO();
-        city.setCityName(cityName);
-        try {
-            cityDAO.add(city);
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public String addCity(String cityName) {
+        List<CitiesPO> cities = this.getCitiesListByName(cityName);
+        String resp = new String();
+        if (cities.size() == 0) {
+            CitiesPO city = new CitiesPO();
+            city.setCityName(cityName);
+            try {
+                cityDAO.add(city);
+                resp = "success";
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            resp = "already exist";
         }
+        return resp;
+
     }
 
     public String addCityMap(String firstCityName, String secondCityName, String distance) {
@@ -37,12 +47,12 @@ public class AdminServiceImpl implements AdminService {
             cityMap.setDistance(Integer.valueOf(distance));
             try {
                 cityMapDAO.add(cityMap);
-                response = "added successfull";
+                response = "success";
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         } else {
-            response = "this map already exist";
+            response = "already exist";
         }
 
         return response;
@@ -50,6 +60,10 @@ public class AdminServiceImpl implements AdminService {
 
     public List<CitiesPO> getCitiesListByName(String cityName) {
         return cityDAO.getCityByName(cityName);
+    }
+
+    public List<CitiesPO> getAllCities() {
+         return cityDAO.getAll(cityPO);
     }
 
     public List<CityMapPO> getDistanceBetweenCities(String firstCityName, String secondCityName) {

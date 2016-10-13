@@ -41,7 +41,7 @@ public abstract class AbstractDAO<E> {
         }
     }
 
-    public List<E> getAll(E object) throws SQLException {
+    public List<E> getAll(E object) {
         Session session = sessions.openSession();
         List<E> list = new ArrayList<E>();
         try {

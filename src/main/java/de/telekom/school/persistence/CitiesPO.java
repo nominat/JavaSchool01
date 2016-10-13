@@ -1,7 +1,6 @@
 package de.telekom.school.persistence;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity

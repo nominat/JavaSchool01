@@ -21,4 +21,19 @@ public class CityDAO extends AbstractDAO<CitiesPO> {
         }
         return  city;
     }
+
+    public List<CitiesPO> getAllCities() {
+        Session session = sessions.openSession();
+        List<CitiesPO> city = null;
+        try {
+            Query query = session.createQuery("select c from CitiesPO c");
+            city = query.list();
+        } catch (Exception  e) {
+            e.printStackTrace();
+        } finally {
+            if (session != null && session.isOpen())
+                session.close();
+        }
+        return  city;
+    }
 }
