@@ -1,19 +1,19 @@
 package de.telekom.school.persistence;
 
-import javax.persistence.Column;
 
 import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "driverstatus")
-public class DriverStatusPO {
+public class DriverStatusPO extends AbstractPO implements Serializable {
+
+    @Column(name = "status")
     private String status;
 
     public DriverStatusPO() {
     }
 
-    @Column(name = "driverstatus", nullable = false, length = 15)
     public String getStatus() {
         return this.status;
     }

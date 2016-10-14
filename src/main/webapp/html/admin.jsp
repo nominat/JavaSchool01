@@ -84,6 +84,30 @@
             <button onclick="addNewCityMap()" class="btn btn-primary">Add City</button>
                 <p> <div id="addCityMapResult"> </div> </p>
         </div>
+        <div class="col-md-2">
+            <h3>Create new driver status</h3>
+            <div>
+                <p><input type="text"  class="form-control"  name="driverStatus" value="" placeholder="Driver Status"></p>
+                <button onclick="addNewDriverStatus()" class="btn btn-primary">Add driver status</button>
+                <p> <div id="addDriverStatus"> </div> </p>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <h3>Create new cargo status</h3>
+            <div>
+                <p><input type="text"  class="form-control"  name="cargoStatus" value="" placeholder="Cargo Status"></p>
+                <button onclick="addNewCargoStatus()" class="btn btn-primary">Add cargo status</button>
+                <p> <div id="addCargoStatus"> </div> </p>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <h3>Create new truck status</h3>
+            <div>
+                <p><input type="text"  class="form-control"  name="truckStatus" value="" placeholder="Truck Status"></p>
+                <button onclick="addNewTruckStatus()" class="btn btn-primary">Add truck status</button>
+                <p> <div id="addTruckStatus"> </div> </p>
+            </div>
+        </div>
     </div>
 
     <hr>

@@ -1,9 +1,7 @@
 package de.telekom.school.service;
 
-import de.telekom.school.dao.CityMapDAO;
-import de.telekom.school.persistence.CitiesPO;
-import de.telekom.school.dao.CityDAO;
-import de.telekom.school.persistence.CityMapPO;
+import de.telekom.school.dao.*;
+import de.telekom.school.persistence.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -15,6 +13,9 @@ public class AdminServiceImpl implements AdminService {
     private CityDAO cityDAO = new CityDAO();
     private CityMapDAO cityMapDAO = new CityMapDAO();
     private CitiesPO cityPO = new CitiesPO();
+    private DriverStatusDAO driverStatusDAO = new DriverStatusDAO();
+    private CargoStatusDAO cargoStatusDAO = new CargoStatusDAO();
+    private TruckStatusDAO truckStatusDAO = new TruckStatusDAO();
 
     public String addCity(String cityName) {
         List<CitiesPO> cities = this.getCitiesListByName(cityName);
@@ -33,6 +34,45 @@ public class AdminServiceImpl implements AdminService {
         }
         return resp;
 
+    }
+
+    public String addDriverStatus(String driverStatus) {
+        DriverStatusPO status = new DriverStatusPO();
+        status.setStatus(driverStatus);
+        String resp = "";
+        try {
+            driverStatusDAO.add(status);
+            resp = "success";
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resp;
+    }
+
+    public String addCargoStatus(String cargoStatus) {
+        CargoStatusPO status = new CargoStatusPO();
+        status.setStatus(cargoStatus);
+        String resp = "";
+        try {
+            cargoStatusDAO.add(status);
+            resp = "success";
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resp;
+    }
+
+    public String addTruckStatus(String truckStatus) {
+        TruckStatusPO status = new TruckStatusPO();
+        status.setStatus(truckStatus);
+        String resp = "";
+        try {
+            truckStatusDAO.add(status);
+            resp = "success";
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resp;
     }
 
     public String addCityMap(String firstCityName, String secondCityName, String distance) {

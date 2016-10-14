@@ -39,3 +39,44 @@ function addNewCityMap() {
     });
 }
 
+function addNewDriverStatus() {
+    var newDriverStatus = $("input[name = 'driverStatus']").val();
+
+    $.ajax( {
+        type: "POST",
+        url:"/html/AddDriverStatus",
+        data: "driverStatus=" + newDriverStatus,
+        dataType: "json",
+        success : function (data) {
+            $("#addDriverStatus").text( data.created + " added successfull.");
+        }
+    } );
+}
+
+function addNewCargoStatus() {
+    var newCargoStatus = $("input[name = 'cargoStatus']").val();
+
+    $.ajax( {
+        type: "POST",
+        url:"/html/CargoStatus",
+        data: "cargoStatus=" + newCargoStatus,
+        dataType: "json",
+        success : function (data) {
+            $("#addCargoStatus").text( data.created + " added successfull.");
+        }
+    } );
+}
+
+function addNewTruckStatus() {
+    var newTruckStatus = $("input[name = 'truckStatus']").val();
+
+    $.ajax( {
+        type: "POST",
+        url:"/html/TruckStatus",
+        data: "truckStatus=" + newTruckStatus,
+        dataType: "json",
+        success : function (data) {
+            $("#addTruckStatus").text( data.created + " added successfull.");
+        }
+    } );
+}

@@ -16,6 +16,18 @@
         <servlet-name>GetCities</servlet-name>
         <servlet-class>de.telekom.school.servlet.GetCities</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddDriverStatus</servlet-name>
+        <servlet-class>de.telekom.school.servlet.AddDriverStatus</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CargoStatus</servlet-name>
+        <servlet-class>de.telekom.school.servlet.CargoStatus</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TruckStatus</servlet-name>
+        <servlet-class>de.telekom.school.servlet.TruckStatus</servlet-class>
+    </servlet>
 
     <servlet-mapping>
       <servlet-name>AddCity</servlet-name>
@@ -28,5 +40,17 @@
     <servlet-mapping>
         <servlet-name>GetCities</servlet-name>
         <url-pattern>/html/GetCities</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddDriverStatus</servlet-name>
+        <url-pattern>/html/AddDriverStatus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CargoStatus</servlet-name>
+        <url-pattern>/html/CargoStatus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TruckStatus</servlet-name>
+        <url-pattern>/html/TruckStatus</url-pattern>
     </servlet-mapping>
 </web-app>
