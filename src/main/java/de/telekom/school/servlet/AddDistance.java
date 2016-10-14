@@ -1,15 +1,12 @@
 package de.telekom.school.servlet;
 
-import de.telekom.school.dao.CityDAO;
-import de.telekom.school.persistence.CitiesPO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.StreamCorruptedException;
-import java.sql.SQLException;
+
 import de.telekom.school.service.AdminServiceImpl;
 import org.json.simple.JSONObject;
 
@@ -37,7 +34,7 @@ public class AddDistance extends HttpServlet {
         response.setHeader("Access-Control-Max-Age", "86400");
 
         JSONObject myObj = new JSONObject();
-        if(resp == "success"){
+        if(resp.equals("success")){
             myObj.put("success", true);
 
         }

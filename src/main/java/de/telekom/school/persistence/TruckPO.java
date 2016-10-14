@@ -85,8 +85,7 @@ public class TruckPO extends AbstractPO implements Serializable {
         if (capacityTonn != null ? !capacityTonn.equals(truckPO.capacityTonn) : truckPO.capacityTonn != null)
             return false;
         if (capacityKg != null ? !capacityKg.equals(truckPO.capacityKg) : truckPO.capacityKg != null) return false;
-        if (currentCity != null ? !currentCity.equals(truckPO.currentCity) : truckPO.currentCity != null) return false;
-        return truckStatus != null ? truckStatus.equals(truckPO.truckStatus) : truckPO.truckStatus == null;
+        return currentCity != null ? currentCity.equals(truckPO.currentCity) : truckPO.currentCity == null && (truckStatus != null ? truckStatus.equals(truckPO.truckStatus) : truckPO.truckStatus == null);
 
     }
 

@@ -1,7 +1,6 @@
 package de.telekom.school.persistence;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity
@@ -52,8 +51,7 @@ public class RoutePointsPO extends AbstractPO implements Serializable {
         RoutePointsPO that = (RoutePointsPO) o;
 
         if (cityFrom != null ? !cityFrom.equals(that.cityFrom) : that.cityFrom != null) return false;
-        if (cityTo != null ? !cityTo.equals(that.cityTo) : that.cityTo != null) return false;
-        return cargo != null ? cargo.equals(that.cargo) : that.cargo == null;
+        return cityTo != null ? cityTo.equals(that.cityTo) : that.cityTo == null && (cargo != null ? cargo.equals(that.cargo) : that.cargo == null);
 
     }
 

@@ -32,7 +32,7 @@ public class CargoStatus extends HttpServlet {
         response.setHeader("Access-Control-Max-Age", "86400");
 
         JSONObject myObj = new JSONObject();
-        if(resp == "success"){
+        if(resp.equals("success")){
             myObj.put("success", true);
 
         }

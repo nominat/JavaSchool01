@@ -2,7 +2,6 @@ package de.telekom.school.dao;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import de.telekom.school.persistence.CitiesPO;
 import de.telekom.school.persistence.CityMapPO;
 
 import java.util.List;

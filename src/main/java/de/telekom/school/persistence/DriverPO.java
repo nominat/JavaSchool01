@@ -1,7 +1,6 @@
 package de.telekom.school.persistence;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity
@@ -100,9 +99,7 @@ public class DriverPO extends AbstractPO implements Serializable {
         if (workedHours != null ? !workedHours.equals(driverPO.workedHours) : driverPO.workedHours != null)
             return false;
         if (status != null ? !status.equals(driverPO.status) : driverPO.status != null) return false;
-        if (currentCity != null ? !currentCity.equals(driverPO.currentCity) : driverPO.currentCity != null)
-            return false;
-        return currentTruck != null ? currentTruck.equals(driverPO.currentTruck) : driverPO.currentTruck == null;
+        return currentCity != null ? currentCity.equals(driverPO.currentCity) : driverPO.currentCity == null && (currentTruck != null ? currentTruck.equals(driverPO.currentTruck) : driverPO.currentTruck == null);
 
     }
 

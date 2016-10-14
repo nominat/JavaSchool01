@@ -5,7 +5,6 @@ import de.telekom.school.persistence.*;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 
 public class AdminServiceImpl implements AdminService {
@@ -19,7 +18,7 @@ public class AdminServiceImpl implements AdminService {
 
     public String addCity(String cityName) {
         List<CitiesPO> cities = this.getCitiesListByName(cityName);
-        String resp = new String();
+        String resp = "";
         if (cities.size() == 0) {
             CitiesPO city = new CitiesPO();
             city.setCityName(cityName);
@@ -78,7 +77,7 @@ public class AdminServiceImpl implements AdminService {
     public String addCityMap(String firstCityName, String secondCityName, String distance) {
         CitiesPO city1 = cityDAO.getCityByName(firstCityName).get(0);
         CitiesPO city2 = cityDAO.getCityByName(secondCityName).get(0);
-        String response = new String();
+        String response = "";
         List<CityMapPO> cityMaps = this.getDistanceBetweenCities(firstCityName, secondCityName);
         if (cityMaps.size() == 0) {
             CityMapPO cityMap = new CityMapPO();

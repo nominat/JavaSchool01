@@ -1,7 +1,6 @@
 package de.telekom.school.persistence;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 
@@ -73,8 +72,7 @@ public class OrderPO extends AbstractPO implements Serializable {
         if (uniqNumber != null ? !uniqNumber.equals(orderPO.uniqNumber) : orderPO.uniqNumber != null) return false;
         if (isDone != null ? !isDone.equals(orderPO.isDone) : orderPO.isDone != null) return false;
         if (truck != null ? !truck.equals(orderPO.truck) : orderPO.truck != null) return false;
-        if (drivers != null ? !drivers.equals(orderPO.drivers) : orderPO.drivers != null) return false;
-        return point != null ? point.equals(orderPO.point) : orderPO.point == null;
+        return drivers != null ? drivers.equals(orderPO.drivers) : orderPO.drivers == null && (point != null ? point.equals(orderPO.point) : orderPO.point == null);
 
     }
 

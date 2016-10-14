@@ -79,8 +79,7 @@ public class CargoPO extends  AbstractPO implements Serializable {
 
         if (!cargoNumber.equals(cargoPO.cargoNumber)) return false;
         if (!cargoName.equals(cargoPO.cargoName)) return false;
-        if (!cargoMass.equals(cargoPO.cargoMass)) return false;
-        return cargoStatus.equals(cargoPO.cargoStatus);
+        return cargoMass.equals(cargoPO.cargoMass) && cargoStatus.equals(cargoPO.cargoStatus);
 
     }
 
