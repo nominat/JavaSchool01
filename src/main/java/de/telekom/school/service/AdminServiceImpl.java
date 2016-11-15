@@ -15,6 +15,11 @@ public class AdminServiceImpl implements AdminService {
     private DriverStatusDAO driverStatusDAO = new DriverStatusDAO();
     private CargoStatusDAO cargoStatusDAO = new CargoStatusDAO();
     private TruckStatusDAO truckStatusDAO = new TruckStatusDAO();
+    private TruckDAO truckDAO = new TruckDAO();
+    //TODO implement work with cargoDAO
+    //TODO implement work with driverDAO
+    //TODO implement work with routePointsDAO
+    //TODO implement work with orderDAO
 
     public String addCity(String cityName) {
         List<CitiesPO> cities = this.getCitiesListByName(cityName);
@@ -74,6 +79,30 @@ public class AdminServiceImpl implements AdminService {
         return resp;
     }
 
+    public String addTruck(String truckNumber, String driversCount, String capacityTonn, String truckStatus, String currentCity) {
+        String response = "";
+        TruckStatusPO status = truckStatusDAO.getTruckStatusByName(truckStatus).get(0);
+        CitiesPO city = cityDAO.getCityByName(currentCity).get(0);
+        List<TruckPO> trucks = this.getTruckWithNumber(truckNumber);
+        if (trucks.size() == 0) {
+            TruckPO truckPO = new TruckPO();
+            truckPO.setTruckNumber(truckNumber);
+            truckPO.setDriversCount(Integer.valueOf(driversCount));
+            truckPO.setCapacityTonn(Integer.valueOf(capacityTonn));
+            truckPO.setTruckStatus(status);
+            truckPO.setCurrentCity(city);
+            try {
+                truckDAO.add(truckPO);
+                response = "success";
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            response = "already exist";
+        }
+        return response;
+    }
+
     public String addCityMap(String firstCityName, String secondCityName, String distance) {
         CitiesPO city1 = cityDAO.getCityByName(firstCityName).get(0);
         CitiesPO city2 = cityDAO.getCityByName(secondCityName).get(0);
@@ -95,6 +124,10 @@ public class AdminServiceImpl implements AdminService {
         }
 
         return response;
+    }
+
+    public List<TruckPO> getTruckWithNumber(String number) {
+        return truckDAO.getTruckByNumber(number);
     }
 
     public List<CitiesPO> getCitiesListByName(String cityName) {

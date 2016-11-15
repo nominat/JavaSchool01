@@ -80,3 +80,24 @@ function addNewTruckStatus() {
         }
     } );
 }
+
+function addNewTruck() {
+    var cityName1 = $("select[name = 'truckNumber'] option:selected").text();  //TODO implement this part and create creation form
+    var cityName2 = $("select[name = 'cityName2'] option:selected").text();
+    var distance = $("input[name = 'distance']").val();
+
+    var dataToSend = "cityName1=" + cityName1 + "&cityName2=" + cityName2 + "&distance=" + distance;
+    $.ajax({
+        type: "POST",
+        url: "/html/AddDistance",
+        data: dataToSend,
+        dataType: "json",
+        success: function (data) {
+            if (data.success == true) {
+                $("#addCityMapResult").text(data.cityMap + " added successfull.");
+            } else {
+                $("#addCityMapResult").text(data.cityMap + " already exists.");
+            }
+        }
+    });
+}

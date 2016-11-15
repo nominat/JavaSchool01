@@ -15,11 +15,10 @@
         <mapping class="de.telekom.school.persistence.CargoStatusPO"/>
         <mapping class="de.telekom.school.persistence.DriverStatusPO"/>
         <mapping class="de.telekom.school.persistence.TruckStatusPO"/>
-        <!--<mapping class="de.telekom.school.persistence.CargoPO"/>
+        <mapping class="de.telekom.school.persistence.TruckPO"/>
+        <mapping class="de.telekom.school.persistence.CargoPO"/>
         <mapping class="de.telekom.school.persistence.DriverPO"/>
         <mapping class="de.telekom.school.persistence.OrderPO"/>
         <mapping class="de.telekom.school.persistence.RoutePointsPO"/>
-        <mapping class="de.telekom.school.persistence.TruckPO"/>
-         -->
     </session-factory>
 </hibernate-configuration>

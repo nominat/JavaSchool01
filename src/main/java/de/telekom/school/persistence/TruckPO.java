@@ -42,14 +42,12 @@ public class TruckPO extends AbstractPO implements Serializable {
 
     public void setCapacityTonn(Integer capacityTonn) {
         this.capacityTonn = capacityTonn;
+        this.capacityKg = capacityTonn * 1000;
     }
 
     @Transient
     public Integer getCapacityKg() {
         return this.capacityKg;
-    }
-    public void setCapacityKg() {
-        this.capacityKg = this.capacityTonn * 1000;
     }
 
     @ManyToOne

@@ -7,9 +7,9 @@ import java.util.List;
 
 public class CargoStatusDAO extends AbstractDAO<CargoStatusPO> {
 
-    public List<CargoStatusDAO> getAllDriverStatuses() {
+    public List<CargoStatusPO> getAllDriverStatuses() {
         Session session = sessions.openSession();
-        List<CargoStatusDAO> status = null;
+        List<CargoStatusPO> status = null;
         try {
             Query query = session.createQuery("select c from CargoStatusPO c");
             status = query.list();

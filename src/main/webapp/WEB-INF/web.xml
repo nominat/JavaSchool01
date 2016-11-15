@@ -28,6 +28,10 @@
         <servlet-name>TruckStatus</servlet-name>
         <servlet-class>de.telekom.school.servlet.TruckStatus</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Truck</servlet-name>
+        <servlet-class>de.telekom.school.servlet.Truck</servlet-class>
+    </servlet>
 
     <servlet-mapping>
       <servlet-name>AddCity</servlet-name>
@@ -52,5 +56,9 @@
     <servlet-mapping>
         <servlet-name>TruckStatus</servlet-name>
         <url-pattern>/html/TruckStatus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Truck</servlet-name>
+        <url-pattern>/html/Truck</url-pattern>
     </servlet-mapping>
 </web-app>

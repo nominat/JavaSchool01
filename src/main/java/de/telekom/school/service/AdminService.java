@@ -12,4 +12,5 @@ public interface AdminService {
     List<CitiesPO> getCitiesListByName(String cityName);
     List<CitiesPO> getAllCities();
     List<CityMapPO> getDistanceBetweenCities(String city1, String city2);
+    //TODO write methods signature
 }
